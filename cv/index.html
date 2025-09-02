@@ -66,28 +66,32 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 			.sheader { background:  }
 		</style>
 			<style type="text/css" id="wp-custom-css">
-			/* Force desktop menu style on all devices */
-.navbar .menu-toggle {
-    display: none !important; /* Hide the hamburger/menu button */
-}
-
-.navbar ul.menu {
-    display: flex !important; /* Make sure menu items are always horizontal */
-    flex-direction: row !important;
-}
-
-.navbar ul.menu li {
-    display: inline-block !important; /* Keep items in a row */
-}
-
-@media only screen and (max-width: 1024px) {
-    /* Prevent responsive styles from hiding menu items */
-    .navbar ul.menu {
+			/* Force desktop menu on all screen sizes */
+@media (max-width: 1024px) {
+    /* Show desktop menu */
+    .main-navigation ul,
+    .menu,
+    .primary-menu {
         display: flex !important;
-        flex-direction: row !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: static !important;
+        height: auto !important;
     }
-    .navbar ul.menu li {
-        display: inline-block !important;
+
+    /* Center menu items on tablets */
+    .main-navigation ul,
+    .menu,
+    .primary-menu {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* Hide hamburger / mobile toggle */
+    .menu-toggle,
+    .mobile-menu-toggle,
+    .hamburger-menu {
+        display: none !important;
     }
 }		</style>
 		</head>
@@ -158,9 +162,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
 
 <aside id="secondary" class="featured-sidebar widget-area">
-	<section id="block-34" class="fbox swidgets-wrap widget widget_block widget_search"><form role="search" method="get" action="/" class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search"><label class="wp-block-search__label screen-reader-text" for="wp-block-search__input-1">Search</label><div class="wp-block-search__inside-wrapper "><input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="Type here to search" value="" type="search" name="s" required><button aria-label="Search" class="wp-block-search__button has-text-color has-black-color has-background has-pale-pink-background-color has-icon wp-element-button" type="submit"><svg class="search-icon" viewbox="0 0 24 24" width="24" height="24">
-					<path d="M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"></path>
-				</svg></button></div></form></section><section id="block-24" class="fbox swidgets-wrap widget widget_block"><form action="https://yamun.substack.com/" method="POST" target="_blank" style="background:#ffa8bf; padding: 40px 20px; border-radius: 8px; max-width: 480px; font-family: sans-serif;">
+	<section id="block-24" class="fbox swidgets-wrap widget widget_block"><form action="https://yamun.substack.com/" method="POST" target="_blank" style="background:#ffa8bf; padding: 40px 20px; border-radius: 8px; max-width: 480px; font-family: sans-serif;">
   <h2 style="margin-top: 0; font-size: 24px;">Join Yamun's Substack </h2>
   <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.4;">
     Subscribe to stay updated on my fieldnotes formatted as blog posts on education, anthropology, activism, and what not!  </p>
